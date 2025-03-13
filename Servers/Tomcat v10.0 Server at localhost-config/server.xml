@@ -134,7 +134,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="MLA_JSP" path="/MLA_JSP" reloadable="true" source="org.eclipse.jst.jee.server:MLA_JSP"/><Context docBase="MLA_CntxCngi" path="/MLA_CntxCngi" reloadable="true" source="org.eclipse.jst.jee.server:MLA_CntxCngi"/><Context docBase="SessionNFilters" path="/SessionNFilters" reloadable="true" source="org.eclipse.jst.jee.server:SessionNFilters"/><Context docBase="mla_webservlets" path="/mla_webservlets" reloadable="true" source="org.eclipse.jst.jee.server:mla_webservlets"/><Context docBase="GmailWebServlet" path="/GmailWebServlet" reloadable="true" source="org.eclipse.jst.jee.server:GmailWebServlet"/><Context docBase="Assignment" path="/Assignment" reloadable="true" source="org.eclipse.jst.jee.server:Assignment"/></Host>
+      <Context docBase="RestAPIExmp" path="/RestAPIExmp" reloadable="true" source="org.eclipse.jst.j2ee.server:RestAPIExmp"/><Context docBase="test-jersey-api" path="/test-jersey-ape" reloadable="true" source="org.eclipse.jst.j2ee.server:test-jersey-api"/><Context docBase="SpringMVC" path="/SpringMVC" reloadable="true" source="org.eclipse.jst.j2ee.server:SpringMVC"/></Host>
     </Engine>
   </Service>
 </Server>
