@@ -14,21 +14,32 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.test.entity.Product;
 import com.test.exceptions.ProductNotFoundExcepton;
 import com.test.service.ProductService;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.extensions.Extension;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import io.swagger.v3.oas.annotations.tags.Tag;
+
 @RestController
-@CrossOrigin(origins="http://localhost:4200")
-@RequestMapping("/products")
+@RequestMapping("/products/v1")
+@CrossOrigin("http://localhost:4200/")
+@Tag(name = "Product")
 public class ProductController {
 
 	@Autowired
 	private ProductService productService;
 	
-	@PostMapping("/create")
+	
+	@PostMapping(value = "/create", consumes = "application/json" )
+	
+	@Operation(summary = "Springdoc open api sample API")
 	public ResponseEntity<Product> createProduct(@RequestBody Product pr)
 	{
 		//product object
@@ -37,6 +48,7 @@ public class ProductController {
 		
 		return new ResponseEntity<>(prObj, HttpStatus.CREATED);
 	}
+	
 	
 	@GetMapping("/listall")
 	public ResponseEntity<List<Product>> listAllProducts()
@@ -53,7 +65,7 @@ public class ProductController {
 		
 		if(dt == null)
 		{
-			throw(new ProductNotFoundExcepton("NOT_CONTENT_BY_ID"));
+			throw(new ProductNotFoundExcepton("NO_CONTENT_BY_ID"));
 		}
 		
 		return new ResponseEntity<>(dt, HttpStatus.NOT_FOUND);

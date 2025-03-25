@@ -7,16 +7,28 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "product")
+@Table(name = "reservation")
 public class Product {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 	
-	private String name;
+	private String custName;
 	
-	private int price;
+	private double custContact;
+	
+	private String custAdd;
+	
+	private int seatCount;
+	
+	private String custBooking;
+	
+	private String custseat;
+	
+	private String custOcca;
+	
+	private String custFood;
 
 	public int getId() {
 		return id;
@@ -26,25 +38,72 @@ public class Product {
 		this.id = id;
 	}
 
-	public String getName() {
-		return name;
+	public String getCustName() {
+		return custName;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setCustName(String custName) {
+		this.custName = custName;
 	}
 
-	public int getPrice() {
-		return price;
+	public double getCustContact() {
+		return custContact;
 	}
 
-	public void setPrice(int price) {
-		this.price = price;
+	public void setCustContact(double custContact) {
+		this.custContact = custContact;
 	}
 
-	@Override
-	public String toString() {
-		return "Product [id=" + id + ", name=" + name + ", price=" + price + "]";
+	public String getCustAdd() {
+		return custAdd;
 	}
+
+	public void setCustAdd(String custAdd) {
+		this.custAdd = custAdd;
+	}
+
+	public int getSeatCount() {
+		return seatCount;
+	}
+
+	public void setSeatCount(int seatCount) {
+		this.seatCount = seatCount;
+	}
+
+	public String getCustBooking() {
+		return custBooking;
+	}
+
+	public void setCustBooking(String custBooking) {
+		this.custBooking = custBooking;
+	}
+
+	public String getCustseat() {
+		return custseat;
+	}
+
+	public void setCustseat(String custseat) {
+		this.custseat = custseat;
+	}
+
+	public String getCustOcca() {
+		return custOcca;
+	}
+
+	public void setCustOcca(String custOcca) {
+		this.custOcca = custOcca;
+	}
+
+	public String getCustFood() {
+		return custFood;
+	}
+
+	public void setCustFood(String custFood) {
+		this.custFood = custFood;
+	}
+
+	
+	
+
 	
 }

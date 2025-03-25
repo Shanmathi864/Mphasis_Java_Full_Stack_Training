@@ -9,7 +9,7 @@ import com.test.dao.CustomerDao;
 import com.test.entity.Customer;
 import com.test.service.CustomerService;
 @Service
-public class CustomerServiceImpl implements CustomerService{
+public abstract class CustomerServiceImpl implements CustomerService{
 	@Autowired
 	private CustomerDao customerDao;
 	
@@ -17,7 +17,6 @@ public class CustomerServiceImpl implements CustomerService{
 		this.customerDao = customerDao;
 	}
 
-	@Override
 	public Customer createCustomer(Customer cst) {
 		try {
 			if(cst != null) {
@@ -29,7 +28,6 @@ public class CustomerServiceImpl implements CustomerService{
 		return cst;
 	}
 
-	@Override
 	public List<Customer> updateCustomers(Customer cst) {
 		 try {
 			 
@@ -43,7 +41,6 @@ public class CustomerServiceImpl implements CustomerService{
 		return customerDao.readAllCustomers();
 	}
 
-	@Override
 	public List<Customer> readAllCustomers(Customer c ) {
 		List<Customer> list = customerDao.readAllCustomers();
 		if(list.size() <=0) {
